@@ -31,14 +31,14 @@
                 var parent_category_id = $(this).val();
                 if (parent_category_id != '') {
                     $.ajax({
-                        url: "<?php echo base_url(); ?>/categories/addSubCategory/" + parent_category_id,
+                        url: "<?php echo base_url(); ?>/addSubCategory/" + parent_category_id,
                         method: "POST",
                         success: function (data) {
                             var res = $.parseJSON(data);
                             if ($.isEmptyObject(res.output)) {
                                 $(".print-error-msg").removeClass('alert-success').addClass('alert-danger').css('display', 'block');
                             } else {
-                                $(".print-error-msg").removeClass('alert-danger').addClass('alert-success');
+                                $(".print-error-msg").removeClass('alert-danger').addClass('alert-success').css('display', 'block');;
                                 $(".category:last").after(res.output);
                             }
                             $(".print-error-msg").html(res.message);

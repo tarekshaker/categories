@@ -31,7 +31,7 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Category::index');
-$routes->post('categories/addSubCategory/(:num)', 'Category::addSubCategory/$1');
+$routes->post('addSubCategory/(:num)', 'Category::addSubCategory/$1');
 
 
 

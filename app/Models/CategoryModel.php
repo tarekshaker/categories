@@ -20,6 +20,7 @@ class CategoryModel extends Model
         foreach ($distinctParents as $parent) {
             $subCategories = $this->where('parent_id', $parent)->get()->getResultArray();
             $html .= '<select class="category form-control input-lg">';
+            $html .= '<option value="" disabled selected>Select Category</option>';
             foreach ($subCategories as $subCat) {
                 $html .= '<option value="' . $subCat['id'] . '">' . $subCat['name'] . '</option>';
             }
