@@ -6,7 +6,9 @@
 After installation, run the following commands:
 
 1.`composer install` 
+
 2.`php spark migrate`
+
 3.`php spark db:seed AddParentCategories`
  
 
